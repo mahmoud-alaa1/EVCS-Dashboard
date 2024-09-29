@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --grey-light: #ededed;
+  --grey-light-hover: #e5e5e5;
+  --grey-light-active: #c8c8c8;
+  --grey-normal: #4f4f4f;
+  --grey-normal-hover: #474747;
+  --grey-normal-active: #3f3f3f;
+  --grey-dark: #3b3b3b;
+  --grey-dark-hover: #2f2f2f;
+  --grey-dark-active: #242424;
+  --grey-darker: #242424;
+
+  --blue-light: #ebf0f3;
+  --blue-light-hover: #e0e8ed;
+  --blue-light-active: #c0cfdb;
+  --blue-normal: #33658a;
+  --blue-normal-hover: #2e5b7c;
+  --blue-normal-active: #29516e;
+  --blue-dark: #264c68;
+  --blue-dark-hover: #1f3d53;
+  --blue-dark-active: #172d3e;
+  --blue-darker: #122330;
+
+  --light-green-white: #ffffff;
+  --light-green-white-hover: #f7fbf4;
+  --light-green-white-active: #e7f2dd;
+  --light-green-light: #f7fbf4;
+  --light-green-light-hover: #e7f2dd;
+  --light-green-light-active: #d9ebc9;
+  --light-green-normal: #f0f7ea;
+  --light-green-normal-hover: #ddedd0;
+  --light-green-normal-active: #cbe3b6;
+  --light-green-dark: #e8f3df;
+
+  --green-light: #f0f7ea;
+  --green-light-hover: #e8f3df;
+  --green-light-active: #d0e6bc;
+  --green-normal: #66ad28;
+  --green-normal-hover: #5c9c24;
+  --green-normal-active: #528a20;
+  --green-dark: #4d821e;
+  --green-dark-hover: #3d6818;
+  --green-dark-active: #2e4e12;
+  --green-darker: #243d0e;
+
+  --background: #101010;
+
+  --sidebar-text: #caecac;
+}
+
+nav a.active {
+  background-color: var(--green-normal-active);
+  color: var(--light-green-white);
+}
+@layer base {
+  @font-face {
+    font-family: "Quicksand";
+    src: url("/fonts/Quicksand/Quicksand-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "Quicksand";
+    src: url("/fonts/Quicksand/Quicksand-Light.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: "Quicksand";
+    src: url("/fonts/Quicksand/Quicksand-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Quicksand";
+    src: url("/fonts/Quicksand/Quicksand-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: "Quicksand";
+    src: url("/fonts/Quicksand/Quicksand-SemiBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 600;
+  }
+  html {
+    font-family: Quicksand, system-ui, sans-serif;
+    font-weight: 600;
+  }
+}
