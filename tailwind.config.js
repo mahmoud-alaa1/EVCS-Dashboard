@@ -3,6 +3,20 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      borderWidth: {
+        DEFAULT: "1px",
+        0: "0",
+        2: "2px",
+        3: "3px",
+        4: "4px",
+        6: "6px",
+        8: "8px",
+      },
+      flexGrow: {
+        2: "2",
+        3: "3",
+        4: "4",
+      },
       padding: {
         "tag-lg": "4px 12px ",
         "tag-sm": "0 6px",

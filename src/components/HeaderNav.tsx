@@ -1,20 +1,11 @@
-import Search from "../icons/Search";
+import SearchInput from "../ui/SearchInput";
 import Tag from "../ui/Tag";
 
 export default function HeaderNav() {
   return (
-    <nav className="flex gap-4 items-center ">
+    <nav className="flex gap-4 items-center flex-wrap ">
       <form>
-        <label className="relative focus:text-red-600">
-          <input
-            type="text"
-            name=""
-            id="search"
-            className="rounded-xl pl-8 pr-5 py-2 bg-grey-light border-green-900"
-            placeholder="Search "
-          />
-          <Search className="absolute top-[50%] translate-y-[-50%] translate-x-1 opacity-55" />
-        </label>
+        <SearchInput placeholder="Search" />
       </form>
       <div className="flex gap-2 items-center">
         <img
