@@ -6,8 +6,10 @@ import "./UsersTableStyle.css";
 export default function UsersTable({ className }: { className?: string }) {
   return (
     <div className={className}>
-      <div className="flex flex-wrap w-full mb-3 gap-2.5">
-        <SearchInput placeholder="Find a customer..." className="flex-grow" />
+      <div className="flex flex-wrap w-full gap-2.5">
+        <form className="flex-grow">
+          <SearchInput placeholder="Find a customer..." />
+        </form>
         <Button className="px-5 py-2.5 rounded-[10px] bg-green-50 border border-green-200 flex items-center text-green-800 gap-0.5">
           <FilterIcon />
           Filter
@@ -15,6 +17,11 @@ export default function UsersTable({ className }: { className?: string }) {
         <Button className="px-[30px] py-2.5 rounded-[10px] bg-green-500  items-center text-green-50 gap-0.5">
           Export CSV
         </Button>
+      </div>
+      <div className="flex justify-between ">
+        <Button>Pervious</Button>
+        Pagination
+        <Button>Next</Button>
       </div>
       <Table className="text-left">
         <Table.Header className="  text-xs font-[500]">
