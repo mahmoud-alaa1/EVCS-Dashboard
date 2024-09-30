@@ -10,7 +10,7 @@ export default function NavItemLink({
   return (
     <NavLink
       to={to}
-      className="py-[10px] px-[15px] flex gap-3 rounded-xl items-center transition-all "
+      className="py-[10px] px-[15px] flex gap-3 rounded-xl items-center transition-all text-green-200 "
     >
       {children}
     </NavLink>
