@@ -31,3 +31,11 @@ export type SearchInputTypes = {
 
   children?: React.ReactNode;
 };
+
+
+export type ButtonTypes = {
+  children?: React.ReactNode;
+  onClick?: any;
+  className?: string;
+};
+
