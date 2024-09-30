@@ -58,34 +58,12 @@ nav a.active {
 @layer base {
   @font-face {
     font-family: "Quicksand";
-    src: url("/fonts/Quicksand/Quicksand-Bold.ttf") format("truetype");
+    src: url("/fonts/Quicksand-VariableFont_wght.woff2") format("woff2");
+    font-weight: 300 700;
     font-style: normal;
-    font-weight: 700;
+    font-display: swap;
   }
-  @font-face {
-    font-family: "Quicksand";
-    src: url("/fonts/Quicksand/Quicksand-Light.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 300;
-  }
-  @font-face {
-    font-family: "Quicksand";
-    src: url("/fonts/Quicksand/Quicksand-Medium.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 400;
-  }
-  @font-face {
-    font-family: "Quicksand";
-    src: url("/fonts/Quicksand/Quicksand-Regular.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 500;
-  }
-  @font-face {
-    font-family: "Quicksand";
-    src: url("/fonts/Quicksand/Quicksand-SemiBold.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 600;
-  }
+
   html {
     font-family: Quicksand, system-ui, sans-serif;
     font-weight: 600;
