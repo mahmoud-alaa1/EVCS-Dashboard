@@ -3,6 +3,20 @@ import SearchInput from "../../ui/SearchInput";
 import Table from "../../ui/Table";
 import Button from "../../ui/Button";
 import "./UsersTableStyle.css";
+import { usersDataTypes } from "../../types/types";
+// import Tag from "../../ui/Tag";
+import Pagination from "../../ui/Pagination";
+
+const data: usersDataTypes = [
+  {
+    name: "David Carter",
+    email: "david.carter@emailhub.com",
+    locations: ["Umm Al Quwain", "Sharjah", "Umm Al Quwain", "Sharjah"],
+    subscription: "Golden",
+    registration: "Sep 28, 2024",
+  },
+];
+
 export default function UsersTable({ className }: { className?: string }) {
   return (
     <div className={className}>
@@ -18,11 +32,9 @@ export default function UsersTable({ className }: { className?: string }) {
           Export CSV
         </Button>
       </div>
-      <div className="flex justify-between ">
-        <Button>Pervious</Button>
-        Pagination
-        <Button>Next</Button>
-      </div>
+
+      <Pagination />
+
       <Table className="text-left">
         <Table.Header className="  text-xs font-[500]">
           <Table.Heading className="w-[31.2572%] px-5 py-3">Name</Table.Heading>

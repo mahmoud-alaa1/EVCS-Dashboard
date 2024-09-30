@@ -6,7 +6,7 @@ export interface TagProps {
 
 export interface TableTypes {
   children?: React.ReactNode;
-  data?: string[];
+  data?: object[];
   render?: any;
   // For extra styling
   className?: string;
@@ -32,10 +32,17 @@ export type SearchInputTypes = {
   children?: React.ReactNode;
 };
 
-
 export type ButtonTypes = {
   children?: React.ReactNode;
-  onClick?: any;
+  onClick?: (e: React.ChangeEvent<HTMLInputElement>) => void | undefined;
   className?: string;
 };
 
+export type userDataTypes = {
+  name: string;
+  email: string;
+  locations: string[];
+  subscription: string;
+  registration: string;
+};
+export type usersDataTypes = userDataTypes[];

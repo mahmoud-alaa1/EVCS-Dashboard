@@ -24,9 +24,7 @@ function Header({ children, className }: TableTypes) {
 }
 
 function Heading({ children, className }: TableTypes) {
-  return (
-    <th className={`  ${className}`}>{children}</th>
-  );
+  return <th className={`  ${className}`}>{children}</th>;
 }
 
 function Body({ data, render }: TableTypes) {
