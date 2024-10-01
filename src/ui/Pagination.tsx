@@ -14,7 +14,7 @@ export default function Pagination() {
             key={i}
             className={`${
               i == 0 ? "bg-green-50" : ""
-            } rounded-[4px] text-base px-4 py-1.5`}
+            } rounded-[4px] text-base px-[10px] py-0.5`}
           >
             {i + 1}
           </Button>
