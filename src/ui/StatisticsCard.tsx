@@ -2,14 +2,14 @@ import TrendingUp from "../icons/TrendingUp";
 
 export default function StatisticsCard({
   className = "",
-  title = "A7a",
+  title = "Trending Up",
   value = 500,
   rate,
 }: {
-  className: string;
-  title: string;
-  value: number;
-  rate: number;
+  className?: string;
+  title?: string;
+  value?: number;
+  rate?: number;
 }) {
   return (
     <div className={`${className}`}>

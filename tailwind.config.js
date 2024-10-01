@@ -3,84 +3,96 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        "login-hero": "url('/loginCover.jpeg') ",
+
+        "button-gradient":
+          "linear-gradient(90deg, #497C1D 0%, #66AD28 50%, #497C1D 100%)",
+
+        "login-gradient":
+          "linear-gradient(0deg, var(--Dark, #101010), var(--Dark, #101010)),radial-gradient(50% 50% at 50% 50%, rgba(102, 173, 40, 0.8) 0%, rgba(102, 173, 40, 0) 100%)",
+      },
+
+      borderWidth: {
+        DEFAULT: "1px",
+        0: "0",
+        2: "2px",
+        3: "3px",
+        4: "4px",
+        6: "6px",
+        8: "8px",
+      },
+      flexGrow: {
+        2: "2",
+        3: "3",
+        4: "4",
+      },
       padding: {
         "tag-lg": "4px 12px ",
         "tag-sm": "0 6px",
       },
       colors: {
-        background: "var(--background)",
-        grey: {
-          DEFAULT: "var(--grey-normal)",
-          hover: "var(--grey-normal-hover)",
-          active: "var(--grey-normal-active)",
-          light: {
-            DEFAULT: "var(--grey-light)",
-            hover: "var(--grey-light-hover)",
-            active: "var(--grey-light-active)",
-          },
-          dark: {
-            DEFAULT: "var(--grey-dark)",
-            hover: "var(--grey-dark-hover)",
-            active: "var(--grey-dark-active)",
-          },
-          darker: "var(--grey-darker)",
+        "umm-al-quwain": {
+          text: "#A62195",
+          bg: "#F9E1F6",
+        },
+        sharjah: {
+          text: "#B90D0D",
+          bg: "#FCCFCF",
+        },
+        dubai: {
+          text: "#452CD1",
+          bg: "#DFDAFB",
+        },
+        "abu-dhabi": {
+          text: "#264C68",
+          bg: "#E0E8ED",
+        },
+        ajman: {
+          text: "#2E8F15",
+          bg: "#D0E6BC",
+        },
+        "ras-al-khaimah": {
+          text: "#4C7628",
+          bg: "#DAEDCA",
+        },
+        fujairah: {
+          text: "#196694",
+          bg: "#E2F1FA",
+        },
+        admin: {
+          text: "#101010",
+          bg: "#FFCD71",
         },
 
-        blue: {
-          DEFAULT: "var(--blue-normal)",
-          hover: "var(--blue-normal-hover)",
-          active: "var(--blue-normal-active)",
-          light: {
-            DEFAULT: "var(--blue-light)",
-            hover: "var(--blue-light-hover)",
-            active: "var(--blue-light-active)",
-          },
-          dark: {
-            DEFAULT: "var(--blue-dark)",
-            hover: "var(--blue-dark-hover)",
-            active: "var(--blue-dark-active)",
-          },
-          darker: "var(--blue-darker)",
-        },
+        dark: "var(--dark)",
 
         green: {
-          DEFAULT: "var(--green-normal)",
-          hover: "var(--green-normal-hover)",
-          active: "var(--green-normal-active)",
-          light: {
-            DEFAULT: "var(--green-light)",
-            hover: "var(--green-light-hover)",
-            active: "var(--green-light-active)",
-          },
-          dark: {
-            DEFAULT: "var(--green-dark)",
-            hover: "var(--green-dark-hover)",
-            active: "var(--green-dark-active)",
-          },
-          darker: "var(--green-darker)",
-        },
+          gradient: "linear-gradient(90deg, #343434 0%, #66AD28 100%)",
 
-        "sidebar-text": {
-          DEFAULT: "var(--sidebar-text)",
+          50: "var(--green-50)",
+          100: "var(--green-100)",
+          200: "var(--green-200)",
+          300: "var(--green-300)",
+          400: "var(--green-400)",
+          500: "var(--green-500)",
+          600: "var(--green-600)",
+          700: "var(--green-700)",
+          800: "var(--green-800)",
+          900: "var(--green-900)",
         },
 
         "light-green": {
-          DEFAULT: "var(--light-green-normal)",
-          hover: "var(--light-green-normal-hover)",
-          active: "var(--light-green-normal-active)",
-          light: {
-            DEFAULT: "var(--light-green-light)",
-            hover: "var(--light-green-light-hover)",
-            active: "var(--light-green-light-active)",
-          },
-          dark: {
-            DEFAULT: "var(--light-green-dark)",
-          },
-          white: {
-            DEFAULT: "var(--light-green-white)",
-            hover: "var(--light-green-white-hover)",
-            active: "var(--light-green-white-active)",
-          },
+          50: "var(--light-green-50)",
+          100: "var(--light-green-100)",
+          200: "var(--light-green-200)",
+          300: "var(--light-green-300)",
+          400: "var(--light-green-400)",
+          500: "var(--light-green-500)",
+          600: "var(--light-green-600)",
+          700: "var(--light-green-700)",
+          800: "var(--light-green-800)",
+          900: "var(--light-green-900)",
         },
       },
     },
