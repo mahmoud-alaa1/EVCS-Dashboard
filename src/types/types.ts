@@ -1,7 +1,15 @@
 export interface TagProps {
+  color?: string;
   children?: string;
   size?: "lg" | "sm";
   className?: string;
+}
+
+export type ColrosMapTypes= {
+  [color: string]: {
+    text: string;
+    bg: string;
+  };
 }
 
 export interface TableTypes {
@@ -44,5 +52,6 @@ export type userDataTypes = {
   locations: string[];
   subscription: string;
   registration: string;
+  id: string | number;
 };
 export type usersDataTypes = userDataTypes[];

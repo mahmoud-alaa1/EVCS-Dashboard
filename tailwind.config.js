@@ -22,6 +22,39 @@ export default {
         "tag-sm": "0 6px",
       },
       colors: {
+        "umm-al-quwain": {
+          text: "#A62195",
+          bg: "#F9E1F6",
+        },
+        sharjah: {
+          text: "#B90D0D",
+          bg: "#FCCFCF",
+        },
+        dubai: {
+          text: "#452CD1",
+          bg: "#DFDAFB",
+        },
+        "abu-dhabi": {
+          text: "#264C68",
+          bg: "#E0E8ED",
+        },
+        ajman: {
+          text: "#2E8F15",
+          bg: "#D0E6BC",
+        },
+        "ras-al-khaimah": {
+          text: "#4C7628",
+          bg: "#DAEDCA",
+        },
+        fujairah: {
+          text: "#196694",
+          bg: "#E2F1FA",
+        },
+        admin: {
+          text: "#101010",
+          bg: "#FFCD71",
+        },
+
         background: "var(--background)",
 
         green: {

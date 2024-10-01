@@ -16,7 +16,7 @@ export default function HeaderNav() {
         <div className="flex flex-col gap-1">
           <span className="text-[1rem] text-[#315313]">Moahmed K.</span>
 
-          <Tag size="sm" className="text-[12px] bg-[#FFCD71]">
+          <Tag size="sm" color="admin">
             Admin
           </Tag>
         </div>

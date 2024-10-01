@@ -4,7 +4,7 @@ import SideNav from "./SideNav";
 
 export default function Sidebar() {
   return (
-    <aside className="text-sidebar-text flex flex-col justify-between">
+    <aside className="text-sidebar-text flex flex-col justify-between h-[90vh]">
       <div>
         <Logo />
         <SideNav />

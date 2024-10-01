@@ -21,6 +21,25 @@ table thead tr th:last-child {
   border-right: 1px solid var(--table-borders);
 }
 
-th {
-  background-color: var(--green-50) !important;
+
+table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
 }
+table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+table tbody tr td:first-child {
+  border-left: 1px solid var(--table-borders);
+}
+table tbody tr td:last-child {
+  border-right: 1px solid var(--table-borders);
+}
+
+table thead tr th {
+  background-color: var(--green-50);
+}
+table tbody tr:nth-child(even) td {
+  background-color: var(--green-50);
+}
+
