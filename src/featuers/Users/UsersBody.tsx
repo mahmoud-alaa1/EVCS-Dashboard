@@ -1,5 +1,5 @@
 import Somethig from "./Somethig";
-import UsersTable from "./UsersTable";
+import UsersTable from "./Table/UsersTable";
 
 export default function UsersBody() {
   return (
