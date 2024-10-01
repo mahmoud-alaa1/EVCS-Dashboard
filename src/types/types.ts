@@ -48,7 +48,6 @@ export type InputTypes = {
 
 export type ButtonTypes = {
   children?: React.ReactNode;
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void; 
   className?: string;
   type: "submit" | "reset" | "button" | undefined;
 } & ButtonHTMLAttributes<HTMLButtonElement> //Include other button attributes;

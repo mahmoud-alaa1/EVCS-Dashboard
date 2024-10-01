@@ -1,5 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../../ui/Button";
 import LoginInput from "../../ui/LoginInput";
 import LoginFormRow from "../../ui/LoginFormRow";
@@ -11,15 +11,26 @@ interface LoginFormInputs {
 }
 
 export default function LoginForm({ className }: { className?: string }) {
+  const navigate = useNavigate();
+
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm<LoginFormInputs>();
+  } = useForm<LoginFormInputs>({
+    defaultValues: { password: "12345678", email: "test@example.com" },
+  });
 
   const onSubmit: SubmitHandler<LoginFormInputs> = (data) => {
     console.log(data);
+    console.log(errors);
+
+    if (errors.email || errors.password) return;
+
+    navigate("/overview");
   };
+
+  function login() {}
 
   console.log(errors);
   return (
@@ -66,6 +77,7 @@ export default function LoginForm({ className }: { className?: string }) {
       <Button
         type="submit"
         className="justify-center bg-button-gradient rounded-lg py-3 text-yellow-50"
+        onClick={login}
       >
         Login
       </Button>
