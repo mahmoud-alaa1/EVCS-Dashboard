@@ -14,7 +14,9 @@ const LoginInput = forwardRef<HTMLInputElement, InputTypes>(
         name={name}
         id={id}
         type={type}
-        className={`${error? "border-2 border-red-500":""} bg-[#66AD282B] outline-none text-[#2f4f12] p-5 rounded-[10px] placeholder:text-[#2E4F1259] ${className} transition-all`}
+        className={`${
+          error ? " border-red-500" : ""
+        } border-2 bg-[#66AD282B] outline-none text-[#2f4f12] p-5 rounded-[10px] placeholder:text-[#2E4F1259] ${className} transition-all`}
       />
     );
   }
