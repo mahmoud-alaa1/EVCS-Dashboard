@@ -1,9 +1,9 @@
 import Search from "../icons/Search";
-import { SearchInputTypes } from "../types/types";
+import { InputTypes } from "../types/types";
 
-function SearchInput({ className, placeholder = "" }: SearchInputTypes) {
+function SearchInput({ className, placeholder = "" }: InputTypes) {
   return (
-    <label className={`relative text-light-green-700 ${className}` }>
+    <label className={`relative text-light-green-700 ${className}`}>
       <input
         type="text"
         name=""

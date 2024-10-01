@@ -1,3 +1,5 @@
+import { ButtonHTMLAttributes } from "react";
+
 export interface TagProps {
   color?: string;
   children?: string;
@@ -5,12 +7,12 @@ export interface TagProps {
   className?: string;
 }
 
-export type ColrosMapTypes= {
+export type ColrosMapTypes = {
   [color: string]: {
     text: string;
     bg: string;
   };
-}
+};
 
 export interface TableTypes {
   children?: React.ReactNode;
@@ -20,14 +22,14 @@ export interface TableTypes {
   className?: string;
 }
 
-export type SearchInputTypes = {
+export type InputTypes = {
   className?: string;
 
   placeholder?: string;
 
   value?: string;
 
-  name?: string;
+  name: string;
 
   htmlFor?: string;
 
@@ -35,16 +37,21 @@ export type SearchInputTypes = {
 
   type?: string;
 
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void | undefined;
-
   children?: React.ReactNode;
+
+  autoCompelete?: string;
+
+  error?: boolean;
+
+  props?: object;
 };
 
 export type ButtonTypes = {
   children?: React.ReactNode;
-  onClick?: (e: React.ChangeEvent<HTMLInputElement>) => void | undefined;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void; 
   className?: string;
-};
+  type: "submit" | "reset" | "button" | undefined;
+} & ButtonHTMLAttributes<HTMLButtonElement> //Include other button attributes;
 
 export type userDataTypes = {
   name: string;

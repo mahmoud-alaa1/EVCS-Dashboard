@@ -3,6 +3,16 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        "login-hero": "url('/loginCover.jpeg') ",
+
+        "button-gradient":
+          "linear-gradient(90deg, #497C1D 0%, #66AD28 50%, #497C1D 100%)",
+
+        "login-gradient":
+          "linear-gradient(0deg, var(--Dark, #101010), var(--Dark, #101010)),radial-gradient(50% 50% at 50% 50%, rgba(102, 173, 40, 0.8) 0%, rgba(102, 173, 40, 0) 100%)",
+      },
+
       borderWidth: {
         DEFAULT: "1px",
         0: "0",
@@ -55,9 +65,11 @@ export default {
           bg: "#FFCD71",
         },
 
-        background: "var(--background)",
+        dark: "var(--dark)",
 
         green: {
+          gradient: "linear-gradient(90deg, #343434 0%, #66AD28 100%)",
+
           50: "var(--green-50)",
           100: "var(--green-100)",
           200: "var(--green-200)",

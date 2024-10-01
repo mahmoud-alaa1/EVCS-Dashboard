@@ -110,13 +110,19 @@ export default function UsersTable({ className }: { className?: string }) {
 
       <div className="flex flex-wrap w-full gap-2.5">
         <form className="flex-grow">
-          <SearchInput placeholder="Find a customer..." />
+          <SearchInput name="search" placeholder="Find a customer..." />
         </form>
-        <Button className="px-5 py-2.5 rounded-[10px] bg-green-50 border border-green-200 flex items-center text-green-800 gap-0.5">
+        <Button
+          type="button"
+          className="px-5 py-2.5 rounded-[10px] bg-green-50 border border-green-200 flex items-center text-green-800 gap-0.5"
+        >
           <FilterIcon />
           Filter
         </Button>
-        <Button className="transition-colors px-[30px] py-2.5 rounded-[10px] bg-green-500  items-center text-green-50 gap-0.5 hover:bg-green-400">
+        <Button
+          type="button"
+          className="transition-colors px-[30px] py-2.5 rounded-[10px] bg-green-500  items-center text-green-50 gap-0.5 hover:bg-green-400"
+        >
           Export CSV
         </Button>
       </div>
@@ -126,21 +132,21 @@ export default function UsersTable({ className }: { className?: string }) {
           <Table.Heading className="w-[31.2572%] px-5 py-3">Name</Table.Heading>
 
           <Table.Heading className="w-[28.8350%]  px-5 py-3">
-            <Button className="gap-1">
+            <Button type="button" className="gap-1">
               Location
               <UnselectedSort />
             </Button>
           </Table.Heading>
 
           <Table.Heading className="w-[20%]  px-5 py-3">
-            <Button className="gap-1">
+            <Button type="button" className="gap-1">
               Subscription
               <UnselectedSort />
             </Button>
           </Table.Heading>
 
           <Table.Heading className="w-[20%]  px-5 py-3">
-            <Button className="gap-1">
+            <Button type="button" className="gap-1">
               Registration
               <UnselectedSort />
             </Button>
@@ -188,15 +194,4 @@ export default function UsersTable({ className }: { className?: string }) {
   );
 }
 
-// total = 867px
-// first col=271px
-// second col=250px
-// third col=173px
-// width: Hug (130px)px;
-// height: Hug (22px)px;
-// padding: 4px 12px 4px 12px;
-// gap: 10px;
-// border-radius: 999px 0px 0px 0px;
-// opacity: 0px;
-// #F9E1F6;
-// background: #A62195;
+

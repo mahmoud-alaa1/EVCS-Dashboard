@@ -27,8 +27,7 @@
   --light-green-900: #5b6354;
 
   --table-borders: #c8c8c8;
-
-  --background: #101010;
+  --dark: #101010;
 }
 
 nav a.active {

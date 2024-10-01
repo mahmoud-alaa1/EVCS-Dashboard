@@ -3,7 +3,7 @@ import UsersBody from "../featuers/Users/UsersBody";
 export default function Users() {
   return (
     <>
-      <h2 className="text-[#315313] font-[700] text-3xl mb-5">Users</h2>
+      <h2 className="text-[#315313] font-[700] text-3xl mb-2">Users</h2>
       <UsersBody />
     </>
   );
