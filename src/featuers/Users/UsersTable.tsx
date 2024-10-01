@@ -7,6 +7,7 @@ import { usersDataTypes } from "../../types/types";
 // import Tag from "../../ui/Tag";
 import Pagination from "../../ui/Pagination";
 import Tag from "../../ui/Tag";
+import UnselectedSort from "../../ui/UnselectedSort";
 
 // const colosrMap = new Map();
 
@@ -125,15 +126,24 @@ export default function UsersTable({ className }: { className?: string }) {
           <Table.Heading className="w-[31.2572%] px-5 py-3">Name</Table.Heading>
 
           <Table.Heading className="w-[28.8350%]  px-5 py-3">
-            Location
+            <Button className="gap-1">
+              Location
+              <UnselectedSort />
+            </Button>
           </Table.Heading>
 
           <Table.Heading className="w-[20%]  px-5 py-3">
-            Subscription
+            <Button className="gap-1">
+              Subscription
+              <UnselectedSort />
+            </Button>
           </Table.Heading>
 
           <Table.Heading className="w-[20%]  px-5 py-3">
-            Registration
+            <Button className="gap-1">
+              Registration
+              <UnselectedSort />
+            </Button>
           </Table.Heading>
         </Table.Header>
 

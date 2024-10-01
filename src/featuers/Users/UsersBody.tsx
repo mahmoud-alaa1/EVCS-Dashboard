@@ -3,9 +3,9 @@ import UsersTable from "./UsersTable";
 
 export default function UsersBody() {
   return (
-    <div className="flex gap-3 flex-wrap flex-grow ">
-      <UsersTable className="flex-grow-4 gap-2.5 flex flex-col" />
-      <Somethig className="flex-grow-3 rounded-xl p-10" />
+    <div className="flex gap-3 flex-wrap flex-grow w-full ">
+      <UsersTable className="flex-grow gap-2.5 flex flex-col" />
+      <Somethig className="w-[33%] rounded-xl p-10" />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { ButtonTypes } from "../types/types";
 
 export default function Button({ children, onClick, className }: ButtonTypes) {
   return (
-    <button onClick={onClick} className={className}>
+    <button onClick={onClick} className={`flex items-center ${className}`}>
       {children}
     </button>
   );
