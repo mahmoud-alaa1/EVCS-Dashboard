@@ -5,7 +5,7 @@ export default function HeaderNav() {
   return (
     <nav className="flex gap-4 items-center flex-wrap ">
       <form>
-        <SearchInput placeholder="Search" />
+        <SearchInput name="searchDash" placeholder="Search" />
       </form>
       <div className="flex gap-2 items-center">
         <img
@@ -15,7 +15,7 @@ export default function HeaderNav() {
         />
         <div className="flex flex-col gap-1">
           <span className="text-[1rem] text-[#315313]">Moahmed K.</span>
-          <Tag size="sm" color="admin">
+          <Tag className="text-xs" size="sm" color="admin">
             Admin
           </Tag>
         </div>
