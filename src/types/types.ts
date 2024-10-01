@@ -14,11 +14,20 @@ export type ColrosMapTypes = {
   };
 };
 
-export interface TableTypes {
+export interface User {
+  id: string | number;
+  name: string;
+  email: string;
+  locations: string[];
+  subscription: string;
+  registration: string;
+}
+
+
+export interface TableTypes<T> {
   children?: React.ReactNode;
-  data?: object[];
-  render?: any;
-  // For extra styling
+  data?: T[];
+  render?: (item: T, index?: number) => JSX.Element;
   className?: string;
 }
 
@@ -50,14 +59,6 @@ export type ButtonTypes = {
   children?: React.ReactNode;
   className?: string;
   type: "submit" | "reset" | "button" | undefined;
-} & ButtonHTMLAttributes<HTMLButtonElement> //Include other button attributes;
+} & ButtonHTMLAttributes<HTMLButtonElement>; //Include other button attributes;
 
-export type userDataTypes = {
-  name: string;
-  email: string;
-  locations: string[];
-  subscription: string;
-  registration: string;
-  id: string | number;
-};
-export type usersDataTypes = userDataTypes[];
+

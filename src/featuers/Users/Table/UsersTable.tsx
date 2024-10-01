@@ -2,14 +2,14 @@ import SearchInput from "../../../ui/SearchInput";
 import Table from "../../../ui/Table";
 import Button from "../../../ui/Button";
 import "./UsersTableStyle.css";
-import { usersDataTypes } from "../../../types/types";
+import { User } from "../../../types/types";
 import Pagination from "../../../ui/Pagination";
 import Tag from "../../../ui/Tag";
 import UnselectedSort from "../../../ui/UnselectedSort";
 import DownloadCSV from "./DownloadCSV";
 import UsersFilter from "./UsersFilter";
 
-const data: usersDataTypes = [
+const data: User[] = [
   {
     name: "David Carter",
     email: "david.carter@emailhub.com",
@@ -133,7 +133,7 @@ export default function UsersTable({ className }: { className?: string }) {
 
         <Table.Body
           data={data}
-          render={(user, i) => {
+          render={(user) => {
             console.log(user);
             return (
               <tr className="" key={user.id}>

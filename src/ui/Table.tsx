@@ -1,12 +1,17 @@
 import { createContext } from "react";
 
-import { TableTypes } from "../types/types";
+interface TableTypes<T> {
+  children?: React.ReactNode;
+  data?: T[];
+  render?: (item: T, index: number) => JSX.Element;
+  className?: string;
+}
 
 // 1. Create a context
 const TableContext = createContext(undefined);
 
 // 2. Create parent component
-function Table({ children, className }: TableTypes) {
+function Table<T>({ children, className }: TableTypes<T>) {
   return (
     <TableContext.Provider value={undefined}>
       <table className={`min-w-full ${className}`}>{children}</table>
@@ -15,7 +20,7 @@ function Table({ children, className }: TableTypes) {
 }
 
 // 3. Creation of child components to render table header and body.
-function Header({ children, className }: TableTypes) {
+function Header<T>({ children, className }: TableTypes<T>) {
   return (
     <thead className={`${className}`}>
       <tr>{children}</tr>
@@ -23,12 +28,12 @@ function Header({ children, className }: TableTypes) {
   );
 }
 
-function Heading({ children, className }: TableTypes) {
+function Heading<T>({ children, className }: TableTypes<T>) {
   return <th className={`  ${className}`}>{children}</th>;
 }
 
-function Body({ data, render }: TableTypes) {
-  return <tbody>{data?.map(render)}</tbody>;
+function Body<T>({ data, render }: TableTypes<T>) {
+  return <tbody>{data?.map(render ?? (() => null))}</tbody>;
 }
 
 // 4. Child components added as properties to the parent component.
