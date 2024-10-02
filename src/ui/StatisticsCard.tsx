@@ -12,12 +12,12 @@ export default function StatisticsCard({
   rate?: number;
 }) {
   return (
-    <div className={`${className}`}>
-      <div>
-        <span>{title}</span>
+    <div className={`bg-statistics-positive ${className}`}>
+      <div className="flex justify-between">
+        <h2>{title}</h2>
         <TrendingUp />
       </div>
-      <div>
+      <div className="flex justify-between">
         <span>{value}</span>
         <span>{rate}</span>
       </div>

@@ -1,0 +1,58 @@
+/* Ensures dropdown menu is hidden and animated properly */
+#usersFilter + ul {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+  max-height: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.26s ease, max-height 0.26s ease;
+}
+
+/* When the checkbox is checked, show the dropdown */
+#usersFilter:checked + ul {
+  pointer-events: auto;
+  max-height: 500px; /* Sets a maximum height to allow for smooth transition */
+  transform: scaleY(1);
+}
+
+/* Basic styling for the dropdown items */
+.dropdown {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown li {
+  border-bottom: 1px solid #ccc;
+}
+
+.dropdown li:last-child {
+  border-bottom: none;
+}
+
+.dropdown li label {
+  display: block;
+  padding: 10px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* Hover effect on the dropdown items */
+.dropdown li label:hover {
+  background-color: #e2e2e2;
+}
+
+/* Ensures user cannot select the text */
+.cursor-pointer {
+  user-select: none;
+}
+
+/* Optional: Add a focus state for keyboard navigation */
+.dropdown li label:focus {
+  background-color: #e0e0e0;
+  outline: none;
+}

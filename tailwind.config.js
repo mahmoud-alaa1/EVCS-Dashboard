@@ -9,8 +9,18 @@ export default {
         "button-gradient":
           "linear-gradient(90deg, #497C1D 0%, #66AD28 50%, #497C1D 100%)",
 
+        "statistics-positive":
+          "linear-gradient(0deg, var(--Base, #66AD28), var(--Base, #66AD28)),linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%)",
+
+        "statistics-negative":
+          "linear-gradient(0deg, var(--Dark, #101010), var(--Dark, #101010)),linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%)",
+
         "login-gradient":
           "linear-gradient(0deg, var(--Dark, #101010), var(--Dark, #101010)),radial-gradient(50% 50% at 50% 50%, rgba(102, 173, 40, 0.8) 0%, rgba(102, 173, 40, 0) 100%)",
+      },
+
+      gridTemplateColumns: {
+        statistics: "repeat(auto-fit, minmax(200px, 1fr))",
       },
 
       borderWidth: {
