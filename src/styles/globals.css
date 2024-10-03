@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
 :root {
   --white: #ffffff;
 
@@ -36,6 +39,10 @@
 nav a.active {
   background-color: var(--green-500);
   color: var(--white);
+}
+
+.capacity-text {
+  @apply text-green-900 text-5xl font-bold font-inter;
 }
 
 @layer base {

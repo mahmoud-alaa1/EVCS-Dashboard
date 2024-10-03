@@ -42,6 +42,11 @@ export default {
         "tag-sm": "0 6px",
       },
 
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+        quicksand: ["Quicksand", "sans-serif"],
+      },
+
       boxShadow: {
         statistics: "0px 8px 16.7px 0px rgba(46, 46, 50, 0.2)", // #2E2E3233 in rgba is equivalent to rgba(46, 46, 50, 0.2)',
       },
