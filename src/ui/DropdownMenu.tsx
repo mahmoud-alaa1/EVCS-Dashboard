@@ -1,18 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useOutsideClick } from "../hooks/useOutsideClick";
-
-type dropdownMenuTypes = {
-  className?: string;
-  items?: string[];
-  render?: (option: string) => JSX.Element | null;
-  children: React.ReactNode;
-};
+import ArrowHeadDown from "../icons/ArrowHeadDown";
+import { dropdownMenuTypes } from "../types/types";
 
 export default function DropdownMenu({
   className = "",
   items,
   render,
   children,
+  arrow = false,
 }: dropdownMenuTypes) {
   const [open, setOpen] = useState(false);
   const ref = useOutsideClick(() => {
@@ -25,13 +21,24 @@ export default function DropdownMenu({
       ref={ref}
       className={`relative ${className}`}
     >
-      {children}
+      <div className="flex items-baseline">
+        {children}
+        {arrow && (
+          <span
+            className={`ml-2 rotate-0 transition-all ${
+              open ? "rotate-180" : ""
+            }`}
+          >
+            <ArrowHeadDown />
+          </span>
+        )}
+      </div>
       <ul
         className={`absolute transition-all origin-top overflow-hidden z-10 translate-y-1 rounded-xl w-max ${
           open ? "scale-y-100" : "scale-y-0"
         }`}
       >
-        {items?.map(render ?? ((option) => <li>{option}</li>))}
+        {items?.map(render ?? ((option) => <li className="p-1">{option}</li>))}
       </ul>
     </div>
   );

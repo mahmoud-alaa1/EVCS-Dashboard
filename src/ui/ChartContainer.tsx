@@ -1,4 +1,6 @@
 import React from "react";
+import DropdownMenu from "./DropdownMenu";
+import { dropdownMenuTypes } from "../types/types";
 
 interface ChartProps {
   children?: React.ReactNode;
@@ -30,7 +32,20 @@ function Title({ children, className }: ChartProps) {
   );
 }
 
+function Menu({ children, items }: dropdownMenuTypes) {
+  return (
+    <DropdownMenu
+      items={items}
+      arrow={true}
+      className="font-inter text-[#454545]"
+    >
+      {children}
+    </DropdownMenu>
+  );
+}
+
 ChartContainer.Header = Header;
 ChartContainer.Title = Title;
+ChartContainer.Menu = Menu;
 
 export default ChartContainer;
