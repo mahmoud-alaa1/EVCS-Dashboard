@@ -47,6 +47,13 @@ export default {
       },
 
       colors: {
+        chart: {
+          axis: {
+            data: "var(--chart-axis-data)",
+            label: "var(--green-900)",
+          },
+        },
+
         "umm-al-quwain": {
           text: "#A62195",
           bg: "#F9E1F6",

@@ -5,7 +5,7 @@ export default function HeaderNav() {
   return (
     <nav className="flex gap-4 items-center flex-wrap ">
       <form>
-        <SearchInput name="searchDash" placeholder="Search" />
+        <SearchInput className="border border-light-green-600" name="searchDash" placeholder="Search" />
       </form>
       <div className="flex gap-2 items-center">
         <img

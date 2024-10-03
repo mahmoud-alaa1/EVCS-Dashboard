@@ -27,7 +27,10 @@
   --light-green-900: #5b6354;
 
   --table-borders: #c8c8c8;
+
   --dark: #101010;
+
+  --chart-axis-data: #9C907F;
 }
 
 nav a.active {
@@ -41,7 +44,13 @@ nav a.active {
     src: url("/fonts/Quicksand-VariableFont_wght.woff2") format("woff2");
     font-weight: 300 700;
     font-style: normal;
-    font-display: swap;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-VariableFont_opsz,wght.woff2") format("woff2");
+    font-optical-sizing: auto;
+    font-weight: 100 900;
+    font-style: normal;
   }
 
   html {
