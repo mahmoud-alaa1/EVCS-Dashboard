@@ -13,6 +13,7 @@ function App() {
           <Route index element={<Navigate to={`overview`} replace={true} />} />
           <Route path="overview" element={<Overview />} />
           <Route path="users" element={<Users />} />
+          <Route path="users/:userId" element={<Users />} />
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="*" element={<PageNotFound />} />

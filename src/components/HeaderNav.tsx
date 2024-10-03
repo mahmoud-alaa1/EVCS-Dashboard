@@ -10,7 +10,7 @@ export default function HeaderNav() {
       <div className="flex gap-2 items-center">
         <img
           className="w-[40px] h-[40px]  rounded-full border-[#31531354]  border-[1px] border-solid "
-          src="admin.png"
+          src="/admin.png"
           alt="admin photo"
         />
         <div className="flex flex-col gap-1">

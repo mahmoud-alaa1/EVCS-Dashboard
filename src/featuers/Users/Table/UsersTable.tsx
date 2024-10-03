@@ -8,6 +8,8 @@ import Tag from "../../../ui/Tag";
 import UnselectedSort from "../../../ui/UnselectedSort";
 import DownloadCSV from "./DownloadCSV";
 import UsersFilter from "./UsersFilter";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useReducer } from "react";
 
 const data: User[] = [
   {
@@ -92,21 +94,63 @@ const data: User[] = [
   },
 ];
 
+type stateTypes = { filter: string; sort: string; search: string };
+
+const initialState: stateTypes = {
+  filter: "",
+  sort: "",
+  search: "",
+};
+
+function reducer(state: stateTypes, action: { type: string; payload: string }) {
+  switch (action.type) {
+    case "filter":
+      return { ...state, filter: action.payload };
+    case "sort":
+      return { ...state, sort: action.payload };
+    case "search":
+      return { ...state, search: action.payload };
+    default:
+      return state;
+  }
+}
+
 export default function UsersTable({ className }: { className?: string }) {
+  const navigate = useNavigate();
+
+  const { userId } = useParams();
+
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    console.log(state.filter,state.search);
+    return () => {};
+  }, [state]);
+
   return (
     <div className={className}>
       <Pagination />
-
       <div className="flex flex-wrap w-full gap-2.5">
         <form className="flex-grow">
-          <SearchInput name="search" placeholder="Find a customer..." />
+          <SearchInput
+            className="border border-light-green-600"
+            name="search"
+            placeholder="Find a customer..."
+            onChange={(e) =>
+              dispatch({ type: "search", payload: e.target.value })
+            }
+          />
         </form>
-        <UsersFilter />
+        <UsersFilter
+          onFilterChange={(filter: string) =>
+            dispatch({ type: "filter", payload: filter })
+          }
+        />
         <DownloadCSV data={data} />
       </div>
 
       <Table className="min-w-full table-fixed text-left">
-        <Table.Header className="text-xs font-[500]">
+        <Table.Header className="text-xs font-[500] bg-green-50">
           <Table.Heading className="w-[31.2572%] px-5 py-3">Name</Table.Heading>
 
           <Table.Heading className="w-[28.8350%]  px-5 py-3">
@@ -134,17 +178,22 @@ export default function UsersTable({ className }: { className?: string }) {
         <Table.Body
           data={data}
           render={(user) => {
-            console.log(user);
             return (
-              <tr className="" key={user.id}>
+              <tr
+                className={`${
+                  user.id === userId ? "border-green-600" : ""
+                } cursor-pointer border-b-3 hover:bg-light-green-200 transition-all active:bg-light-green-500`}
+                key={user.id}
+                onClick={() => navigate(`/users/${user.id}`)}
+              >
                 <td className="px-5 py-2">
                   <div>
                     <p className="">{user.name}</p>
                     <p className="text-neutral-500">{user.email}</p>
                   </div>
                 </td>
-                <td className="px-5 py-2  ">
-                  <div className="flex flex-wrap gap-1">
+                <td className="px-5 py-2">
+                  <div className="flex flex-wrap gap-2">
                     {user.locations.map((location) => (
                       <Tag
                         className="capitalize"

@@ -31,7 +31,6 @@ export default function Tag({
   const sizeClass = size === "lg" ? "p-tag-lg" : "p-tag-sm";
   color = toLowerCaseWords(color);
   const colorClass = colorMap[color];
-  console.log(color);
   return (
     <span
       className={`rounded-full w-fit ${sizeClass} ${colorClass.text} ${colorClass.bg} ${className}`}

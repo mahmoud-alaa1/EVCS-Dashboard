@@ -38,7 +38,7 @@ export default {
         4: "4",
       },
       padding: {
-        "tag-lg": "4px 12px ",
+        "tag-lg": "0px 12px ",
         "tag-sm": "0 6px",
       },
 

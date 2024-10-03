@@ -1,8 +1,10 @@
 import { usersDataTypes } from "../../types/types";
 
-export function processPathName(path: string) {
-  path = path.slice(1);
-  return path.charAt(0).toUpperCase() + path.slice(1);
+export function processPathName(path: string): string[] {
+  return path
+    .split("/") // Split the path into segments
+    .filter(segment => segment.length > 0) // Filter out empty segments
+    .map(segment => segment.charAt(0).toUpperCase() + segment.slice(1)); // Capitalize the first letter of each segment
 }
 
 export function toLowerCaseWords(str: string) {

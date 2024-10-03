@@ -27,8 +27,9 @@ export interface User {
 export interface TableTypes<T> {
   children?: React.ReactNode;
   data?: T[];
-  render?: (item: T, index?: number) => JSX.Element;
+  render?: (item: T, index: number) => JSX.Element;
   className?: string;
+  id?: string;
 }
 
 export type InputTypes = {
@@ -47,6 +48,8 @@ export type InputTypes = {
   type?: string;
 
   children?: React.ReactNode;
+
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 
   autoCompelete?: string;
 

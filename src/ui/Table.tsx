@@ -1,20 +1,18 @@
 import { createContext } from "react";
+import { TableTypes } from "../types/types";
 
-interface TableTypes<T> {
-  children?: React.ReactNode;
-  data?: T[];
-  render?: (item: T, index: number) => JSX.Element;
-  className?: string;
-}
+
 
 // 1. Create a context
 const TableContext = createContext(undefined);
 
 // 2. Create parent component
-function Table<T>({ children, className }: TableTypes<T>) {
+function Table<T>({ children, className, id }: TableTypes<T>) {
   return (
     <TableContext.Provider value={undefined}>
-      <table className={`min-w-full ${className}`}>{children}</table>
+      <table id={id} className={`min-w-full ${className}`}>
+        {children}
+      </table>
     </TableContext.Provider>
   );
 }
