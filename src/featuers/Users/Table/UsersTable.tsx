@@ -1,4 +1,3 @@
-import SearchInput from "../../../ui/SearchInput";
 import Table from "../../../ui/Table";
 import Button from "../../../ui/Button";
 import "./UsersTableStyle.css";
@@ -8,8 +7,9 @@ import Tag from "../../../ui/Tag";
 import UnselectedSort from "../../../ui/UnselectedSort";
 import DownloadCSV from "./DownloadCSV";
 import UsersFilter from "./UsersFilter";
-import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useReducer } from "react";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import UsersSearch from "./UsersSearch";
+import { useEffect } from "react";
 
 const data: User[] = [
   {
@@ -94,58 +94,36 @@ const data: User[] = [
   },
 ];
 
-type stateTypes = { filter: string; sort: string; search: string };
-
-const initialState: stateTypes = {
-  filter: "",
-  sort: "",
-  search: "",
-};
-
-function reducer(state: stateTypes, action: { type: string; payload: string }) {
-  switch (action.type) {
-    case "filter":
-      return { ...state, filter: action.payload };
-    case "sort":
-      return { ...state, sort: action.payload };
-    case "search":
-      return { ...state, search: action.payload };
-    default:
-      return state;
-  }
-}
-
 export default function UsersTable({ className }: { className?: string }) {
   const navigate = useNavigate();
 
   const { userId } = useParams();
 
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  function navigateToNewId(newId: string) {
+    navigate({
+      pathname: `/users/${newId}`,
+      search: `?${searchParams.toString()}`,
+    });
+  }
 
   useEffect(() => {
-    console.log(state.filter,state.search);
+    console.log(searchParams);
     return () => {};
-  }, [state]);
+  }, [searchParams]);
 
   return (
     <div className={className}>
       <Pagination />
       <div className="flex flex-wrap w-full gap-2.5">
-        <form className="flex-grow">
-          <SearchInput
-            className="border border-light-green-600"
-            name="search"
-            placeholder="Find a customer..."
-            onChange={(e) =>
-              dispatch({ type: "search", payload: e.target.value })
-            }
-          />
-        </form>
-        <UsersFilter
-          onFilterChange={(filter: string) =>
-            dispatch({ type: "filter", payload: filter })
-          }
+        <UsersSearch
+          onSearch={(value) => {
+            searchParams.set("search", value);
+            setSearchParams(searchParams);
+          }}
         />
+        <UsersFilter />
         <DownloadCSV data={data} />
       </div>
 
@@ -184,7 +162,7 @@ export default function UsersTable({ className }: { className?: string }) {
                   user.id === userId ? "border-green-600" : ""
                 } cursor-pointer border-b-3 hover:bg-light-green-200 transition-all active:bg-light-green-500`}
                 key={user.id}
-                onClick={() => navigate(`/users/${user.id}`)}
+                onClick={() => navigateToNewId(user.id.toString())}
               >
                 <td className="px-5 py-2">
                   <div>

@@ -1,4 +1,4 @@
-import Somethig from "./Somethig";
+import Somethig from "./Details/Somethig";
 import UsersTable from "./Table/UsersTable";
 
 export default function UsersBody() {

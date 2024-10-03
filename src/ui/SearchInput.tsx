@@ -3,7 +3,7 @@ import { InputTypes } from "../types/types";
 
 function SearchInput({ className, placeholder = "",onChange }: InputTypes) {
   return (
-    <label className={`relative text-light-green-700 `}>
+    <label className={`relative text-light-green-700 flex-grow`}>
       <input
         type="text"
         name=""
