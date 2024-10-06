@@ -19,13 +19,12 @@ const CircularProgressChart = () => {
   }, []);
 
   return (
-    <ResponsiveContainer width="100%" >
+    <ResponsiveContainer height={`80%`}>
       <RadialBarChart
         cx="50%"
         cy="50%"
-        innerRadius="90%"
-        outerRadius="90%"
-        barSize={20}
+        innerRadius="100%"
+        barSize={25}
         data={data}
         startAngle={90}
         endAngle={-270}
@@ -46,9 +45,9 @@ const CircularProgressChart = () => {
         </defs>
 
         <RadialBar
-          background={{ fill: backgroundColor }} // Use the CSS variable value
+          background={{ fill: backgroundColor }}
           dataKey="value"
-          fill="url(#progressGradient)" // Keep the gradient fill for the progress
+          fill="url(#progressGradient)"
           cornerRadius={10}
         />
         <text

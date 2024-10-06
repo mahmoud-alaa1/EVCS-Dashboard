@@ -5,7 +5,7 @@ import ChartContainer from "../ui/ChartContainer";
 
 export default function Middle() {
   return (
-    <div className="flex gap-9 flex-wrap lg:flex-nowrap h-[30rem]">
+    <div className="grid gap-9 2xl:grid-cols-[3fr_1fr] min-h-[30rem]">
       <ChartContainer>
         <ChartContainer.Header>
           <ChartContainer.Title>Charges</ChartContainer.Title>
@@ -20,7 +20,7 @@ export default function Middle() {
         <ChargesChart />
       </ChartContainer>
 
-      <div className="flex flex-col gap-7 w-[30%] ">
+      <div className="grid xl:grid-rows-[3fr_1fr] gap-7 ">
         <ChartContainer>
           <ChartContainer.Header>
             <ChartContainer.Title className="text-xl">

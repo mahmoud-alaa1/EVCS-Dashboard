@@ -6,7 +6,6 @@ export default function Overview() {
     <div className="flex flex-col gap-8">
       <Statistics />
       <Middle />
-      <Middle />
     </div>
   );
 }

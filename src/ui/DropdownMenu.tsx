@@ -38,7 +38,7 @@ export default function DropdownMenu({
           open ? "scale-y-100" : "scale-y-0"
         }`}
       >
-        {items?.map(render ?? ((option) => <li className="p-1">{option}</li>))}
+        {items?.map(render ?? ((option) => <li className="p-1" key={option}>{option}</li>))}
       </ul>
     </div>
   );

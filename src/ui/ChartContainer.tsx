@@ -11,7 +11,7 @@ interface ChartProps {
 function ChartContainer({ className = "", children }: ChartProps) {
   return (
     <div
-      className={`shadow-statistics w-full bg-light-green-100 p-[30px] flex flex-col h-full  rounded-3xl font-inter gap-4 ${className}`}
+      className={`shadow-statistics w-full bg-light-green-100 p-[30px]  h-full  rounded-3xl font-inter gap-4 ${className}`}
     >
       {children}
     </div>
@@ -19,7 +19,7 @@ function ChartContainer({ className = "", children }: ChartProps) {
 }
 
 function Header({ children }: ChartProps) {
-  return <div className="flex justify-between">{children}</div>;
+  return <div className="flex justify-between mb-4">{children}</div>;
 }
 
 function Title({ children, className }: ChartProps) {
