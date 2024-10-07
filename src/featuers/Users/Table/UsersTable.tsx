@@ -101,6 +101,15 @@ export default function UsersTable({ className }: { className?: string }) {
 
   const [searchParams, setSearchParams] = useSearchParams();
 
+  const search = searchParams.get("search")?.toLowerCase();
+  const filterData = search
+    ? data.filter(
+        (el) =>
+          el.name.toLowerCase().includes(search) ||
+          el.email.toLowerCase().includes(search)
+      )
+    : data;
+
   function navigateToNewId(newId: string) {
     navigate({
       pathname: `/users/${newId}`,
@@ -154,7 +163,7 @@ export default function UsersTable({ className }: { className?: string }) {
         </Table.Header>
 
         <Table.Body
-          data={data}
+          data={filterData}
           render={(user) => {
             return (
               <tr
