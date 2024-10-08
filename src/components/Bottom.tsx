@@ -6,7 +6,7 @@ export default function Bottom() {
     <div className="grid gap-9 2xl:grid-cols-[1fr_1fr] min-h-[20rem]">
       <ChartContainer>
         <ChartContainer.Header>
-          <ChartContainer.Title>Charges</ChartContainer.Title>
+          <ChartContainer.Title>Traffic By City</ChartContainer.Title>
           <ChartContainer.Menu
             className="text-dark "
             items={["August", "Septemper", "October"]}

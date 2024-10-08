@@ -1,15 +1,18 @@
 import { useSearchParams } from "react-router-dom";
 import Button from "./Button";
 
-const LENGTH = [1, 2, 3, 4, 5, 6, 7];
-
-export default function Pagination() {
+export default function Pagination({ length }: { length: number }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  let page = Number(searchParams.get("page")) || 0;
+  const LENGTH = Array.from(
+    { length: Math.ceil(length / 10) },
+    (_, i) => i + 1
+  );
+  let page = Number(searchParams.get("page")) || 1;
 
   const handlePageChange = (change: number) => {
-    page = (page + change + LENGTH.length) % LENGTH.length;
+
+    page = (page + change + LENGTH.length + 1) % (LENGTH.length + 1) || 1;
     searchParams.set("page", page.toString());
     setSearchParams(searchParams);
   };
@@ -28,9 +31,9 @@ export default function Pagination() {
           <Button
             type="button"
             key={i}
-            onClick={() => handlePageChange(i - page)}
+            onClick={() => handlePageChange(i + 1 - page)}
             className={`${
-              i == page ? "bg-green-50" : ""
+              i + 1 == page ? "bg-green-50" : ""
             } rounded-[4px] text-base px-[10px] py-0.5 transition-all`}
           >
             {i + 1}

@@ -8,8 +8,8 @@ import DownloadCSV from "./DownloadCSV";
 import UsersFilter from "./UsersFilter";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import UsersSearch from "./UsersSearch";
-import { useEffect } from "react";
 import { TUsersTableProps } from "../../../types/types";
+import SortButton from "../../../ui/SortButton";
 
 type TProps = TUsersTableProps;
 
@@ -20,15 +20,7 @@ export default function UsersTable({ className, data }: TProps) {
 
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const search = searchParams.get("search")?.toLowerCase();
-  const filterData = search
-    ? data.filter(
-        (el) =>
-          el.name.toLowerCase().includes(search) ||
-          el.email.toLowerCase().includes(search)
-      )
-    : data;
-
+  //Navigate to user details
   function navigateToNewId(newId: string) {
     navigate({
       pathname: `/users/${newId}`,
@@ -36,14 +28,48 @@ export default function UsersTable({ className, data }: TProps) {
     });
   }
 
-  useEffect(() => {
-    console.log(searchParams);
-    return () => {};
-  }, [searchParams]);
+  //Seach filter
+  const search = searchParams.get("search")?.toLowerCase();
+  let filterData = search
+    ? data.filter(
+        (el) =>
+          el.name.toLowerCase().includes(search) ||
+          el.email.toLowerCase().includes(search)
+      )
+    : data;
+
+  //Subscribe filter
+  const subscribeFilter = searchParams.get("filter")?.toLowerCase() ?? "all";
+  if (subscribeFilter !== "all")
+    filterData = filterData.filter(
+      (el) => el.subscription.toLowerCase() == subscribeFilter
+    );
+
+  //Sort
+  let copyData = [...filterData];
+  const sort = searchParams.get("sort") ?? "default";
+  if (sort !== "default") {
+    copyData = copyData.sort((a, b) => {
+      const leftDate = new Date(a.registration);
+      const rightDate = new Date(b.registration);
+      if (sort === "high") {
+        return leftDate > rightDate ? 1 : -1;
+      } else {
+        return leftDate < rightDate ? 1 : -1;
+      }
+    });
+  } else {
+    copyData = filterData;
+  }
+
+  //pagination
+  const page = Number(searchParams.get("page")) || 1;
+  copyData = copyData.slice((page - 1) * 10, page * 10);
+  console.log(copyData);
 
   return (
     <div className={className}>
-      <Pagination />
+      <Pagination length={filterData.length} />
       <div className="flex flex-wrap w-full gap-2.5">
         <UsersSearch
           onSearch={(value) => {
@@ -60,29 +86,20 @@ export default function UsersTable({ className, data }: TProps) {
           <Table.Heading className="w-[31.2572%] px-5 py-3">Name</Table.Heading>
 
           <Table.Heading className="w-[28.8350%]  px-5 py-3">
-            <Button type="button" className="gap-1">
-              Location
-              <UnselectedSort />
-            </Button>
+            Location
           </Table.Heading>
 
           <Table.Heading className="w-[20%]  px-5 py-3">
-            <Button type="button" className="gap-1">
-              Subscription
-              <UnselectedSort />
-            </Button>
+            Subscription
           </Table.Heading>
 
           <Table.Heading className="w-[20%]  px-5 py-3">
-            <Button type="button" className="gap-1">
-              Registration
-              <UnselectedSort />
-            </Button>
+            <SortButton>Registeration</SortButton>
           </Table.Heading>
         </Table.Header>
 
         <Table.Body
-          data={filterData}
+          data={copyData}
           render={(user) => {
             return (
               <tr

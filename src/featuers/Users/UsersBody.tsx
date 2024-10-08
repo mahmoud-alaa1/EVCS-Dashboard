@@ -8,7 +8,7 @@ const data: User[] = [
     email: "david.carter@emailhub.com",
     locations: ["Umm Al Quwain", "Dubai"],
     subscription: "Golden",
-    registration: "Sep 28, 2024",
+    registration: "Sep 20, 2024",
     id: "1565651651",
     phone: "123456789",
     cars: [
@@ -22,7 +22,7 @@ const data: User[] = [
     email: "amina.khalil@webmail.com",
     locations: ["Dubai"],
     subscription: "Golden",
-    registration: "Sep 28, 2024",
+    registration: "Sep 29, 2024",
     id: "1565651652",
     phone: "123456789",
 
@@ -37,7 +37,7 @@ const data: User[] = [
     email: "zainab.farsi@inboxnow.com",
     locations: ["Sharjah"],
     subscription: "Golden",
-    registration: "Sep 28, 2024",
+    registration: "Sep 15, 2024",
     id: "1565651654",
     phone: "123456789",
 
@@ -52,7 +52,7 @@ const data: User[] = [
     email: "michael.t@fastmail.com",
     locations: ["Ras Al Khaimah"],
     subscription: "Golden",
-    registration: "Sep 28, 2024",
+    registration: "Sep 1, 2024",
     id: "1565651655",
     phone: "123456789",
 
@@ -67,7 +67,7 @@ const data: User[] = [
     email: "omar.haddad@quickmail.com",
     locations: ["Fujairah", "Sharjah"],
     subscription: "Golden",
-    registration: "Sep 28, 2024",
+    registration: "Sep 2, 2024",
     id: "1565651656",
     phone: "123456789",
 
@@ -82,7 +82,7 @@ const data: User[] = [
     email: "sarah.ahmed@outlookzone.com",
     locations: ["Ajman"],
     subscription: "Golden",
-    registration: "Sep 28, 2024",
+    registration: "Sep 7, 2024",
     id: "1565651657",
     phone: "123456789",
 
@@ -96,8 +96,8 @@ const data: User[] = [
     name: "Yusuf Ibrahim",
     email: "yusuf.ibrahim@netmail.com",
     locations: ["Ajman"],
-    subscription: "Golden",
-    registration: "Sep 28, 2024",
+    subscription: "Premium",
+    registration: "Sep 12, 2024",
     id: "1565651658",
     phone: "123456789",
 
@@ -111,8 +111,8 @@ const data: User[] = [
     name: "Yusuf Ibrahim",
     email: "yusuf.ibrahim@netmail.com",
     locations: ["Ajman"],
-    subscription: "Golden",
-    registration: "Sep 28, 2024",
+    subscription: "Normal",
+    registration: "Sep 30, 2024",
     id: "1565651659",
     phone: "123456789",
 
@@ -126,7 +126,7 @@ const data: User[] = [
     name: "Emily Scott",
     email: "emily.scott@epost.com",
     locations: ["Fujairah"],
-    subscription: "Golden",
+    subscription: "Premium",
     registration: "Sep 28, 2024",
     id: "1565651660",
     phone: "123456789",
@@ -141,9 +141,39 @@ const data: User[] = [
     name: "Hassan Mansour",
     email: "hassan.mansour@sendit.com",
     locations: ["Sharjah"],
-    subscription: "Golden",
+    subscription: "Premium",
     registration: "Sep 28, 2024",
     id: "1565651661",
+    phone: "123456789",
+
+    cars: [
+      { make: "Tesla", model: "Scenic E-tech", color: "red" },
+      { make: "Tesla", model: "Scenic E-tech", color: "red" },
+      { make: "Tesla", model: "Scenic E-tech", color: "red" },
+    ],
+  },
+  {
+    name: "Hassan Mahmoud",
+    email: "hassan.mansour@sendit.com",
+    locations: ["Sharjah"],
+    subscription: "Premium",
+    registration: "Sep 28, 2024",
+    id: "1565651662",
+    phone: "123456789",
+
+    cars: [
+      { make: "Tesla", model: "Scenic E-tech", color: "red" },
+      { make: "Tesla", model: "Scenic E-tech", color: "red" },
+      { make: "Tesla", model: "Scenic E-tech", color: "red" },
+    ],
+  },
+  {
+    name: "Hassan Ahmed",
+    email: "hassan.mansour@sendit.com",
+    locations: ["Sharjah"],
+    subscription: "Premium",
+    registration: "Sep 28, 2024",
+    id: "1565651663",
     phone: "123456789",
 
     cars: [

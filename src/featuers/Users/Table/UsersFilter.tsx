@@ -12,6 +12,7 @@ export default function UsersFilter() {
           className="block px-4 py-2 cursor-pointer bg-light-green-300 hover:bg-light-green-500 transition-all"
           onClick={() => {
             searchParams.set("filter", item);
+            searchParams.set("page", "1");
             setSearchParams(searchParams);
           }}
           role="menuitem"
@@ -20,7 +21,7 @@ export default function UsersFilter() {
           {item}
         </li>
       )}
-      items={["option1", "option2", "option3"]}
+      items={["All", "Normal", "Golden", "Premium"]}
     >
       <button>
         <p className=" cursor-pointer px-5 py-2.5 rounded-[10px] bg-green-50 border border-green-200 flex items-center text-green-800 gap-0.5">

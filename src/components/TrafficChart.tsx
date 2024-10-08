@@ -9,13 +9,44 @@ import {
 } from "recharts";
 
 // Generating 52 weeks of data for three cities
-const data = Array.from({ length: 15 }, (_, i) => ({
+const data = Array.from({ length: 5 }, (_, i) => ({
   week: `Week ${i + 1}`,
-  Dubai: Math.floor(15 + Math.random() * 10), // Random traffic data between 15 and 25
-  Sharjah: Math.floor(12 + Math.random() * 8), // Random traffic data between 12 and 20
-  AbuDhabi: Math.floor(10 + Math.random() * 6), // Random traffic data between 10 and 16
+  Dubai: Math.floor(10 + Math.random() * 5), // Random traffic data between 15 and 25
+  Sharjah: Math.floor(15 + Math.random() * 8), // Random traffic data between 12 and 20
+  AbuDhabi: Math.floor(20 + Math.random() * 6), // Random traffic data between 10 and 16
 }));
-
+const CustomLegend = (props) => {
+  const legendItems = [
+    { name: "Dubai", color: "url(#colorDubai)", solidColor: "#3D7DCA" }, // solid color used for legend circle
+    { name: "Sharjah", color: "url(#colorSharjah)", solidColor: "#78B94C" },
+    { name: "AbuDhabi", color: "url(#colorAbuDhabi)", solidColor: "#758C9E" },
+  ];
+  const { payload } = props;
+  return (
+    <div style={{ display: "flex", justifyContent: "center", marginTop: 10 }}>
+      {legendItems.map((entry, index) => (
+        <div
+          className="flex items-center justify-center w-full"
+          key={`item-${index}`}
+          style={{ marginRight: 20, fontFamily: "Inter", fontSize: 14 }}
+        >
+          <span
+            style={{
+              display: "inline-block",
+              width: 10,
+              height: 10,
+              color: entry.solidColor,
+              marginRight: 5,
+              borderRadius: "50%",
+            }}
+          >
+            &#9679;&nbsp;{entry.name}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+};
 export default function TrafficChart() {
   return (
     <ResponsiveContainer width="100%" height="90%">
@@ -27,9 +58,13 @@ export default function TrafficChart() {
           top: 10,
           right: 30,
           left: 0,
-          bottom: 0,
         }}
       >
+        <CartesianGrid
+          strokeLinecap="square"
+          color="##1D170F"
+          strokeWidth={0.4}
+        />
         <defs>
           <linearGradient id="colorDubai" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#3D7DCA" />
@@ -50,18 +85,18 @@ export default function TrafficChart() {
         <YAxis
           tick={{ fill: "#9C907F", fontFamily: "Inter", fontSize: 14 }}
           tickFormatter={(value) => `Ξ ${value}`}
+          domain={[10, 20]}
+          interval={"preserveStartEnd"}
+          tickCount={20}
         />
         <Tooltip />
-        <Legend
-          style={{ fill: "#9C907F", fontFamily: "Inter", fontSize: 14 }}
-          formatter={(value) => value}
-        />
+        <Legend content={<CustomLegend />} />
 
         <Line
-          type="monotone"
+          type="bumpX"
           dataKey="Dubai"
           stroke="url(#colorDubai)"
-          strokeWidth={5}
+          strokeWidth={7}
           dot={false}
           activeDot={{ r: 8 }}
         />
@@ -69,7 +104,7 @@ export default function TrafficChart() {
           type="monotone"
           dataKey="Sharjah"
           stroke="url(#colorSharjah)"
-          strokeWidth={5}
+          strokeWidth={7}
           dot={false}
           activeDot={{ r: 8 }}
         />
@@ -77,7 +112,7 @@ export default function TrafficChart() {
           type="monotone"
           dataKey="AbuDhabi"
           stroke="url(#colorAbuDhabi)"
-          strokeWidth={5}
+          strokeWidth={7}
           dot={false}
           activeDot={{ r: 8 }}
         />
