@@ -14,11 +14,6 @@ export type ColrosMapTypes = {
   };
 };
 
-export interface Car {
-  make: string;
-  model: string;
-  color: string;
-}
 export interface User {
   id: string | number;
   name: string;
@@ -27,7 +22,6 @@ export interface User {
   subscription: string;
   registration: string;
   phone: string;
-
   cars: Car[];
 }
 
@@ -75,3 +69,8 @@ export type TUsersTableProps = {
   className?: string;
   data: User[];
 };
+export interface Car {
+  make: string;
+  model: string;
+  color: string;
+}
