@@ -21,6 +21,8 @@ export interface User {
   locations: string[];
   subscription: string;
   registration: string;
+  phone: string;
+  cars: Car[];
 }
 
 export interface TableTypes<T> {
@@ -70,3 +72,13 @@ export type ButtonTypes = {
   className?: string;
   type: "submit" | "reset" | "button" | undefined;
 } & ButtonHTMLAttributes<HTMLButtonElement>; //Include other button attributes;
+
+export type TUsersTableProps = {
+  className?: string;
+  data: User[];
+};
+export interface Car {
+  make: string;
+  model: string;
+  color: string;
+}

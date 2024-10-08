@@ -1,7 +1,6 @@
 import Table from "../../../ui/Table";
 import Button from "../../../ui/Button";
 import "./UsersTableStyle.css";
-import { User } from "../../../types/types";
 import Pagination from "../../../ui/Pagination";
 import Tag from "../../../ui/Tag";
 import UnselectedSort from "../../../ui/UnselectedSort";
@@ -10,96 +9,25 @@ import UsersFilter from "./UsersFilter";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import UsersSearch from "./UsersSearch";
 import { useEffect } from "react";
+import { TUsersTableProps } from "../../../types/types";
 
-const data: User[] = [
-  {
-    name: "David Carter",
-    email: "david.carter@emailhub.com",
-    locations: ["Umm Al Quwain", "Dubai"],
-    subscription: "Golden",
-    registration: "Sep 28, 2024",
-    id: "1565651651",
-  },
-  {
-    name: "Amina Khalil",
-    email: "amina.khalil@webmail.com",
-    locations: ["Dubai"],
-    subscription: "Golden",
-    registration: "Sep 28, 2024",
-    id: "1565651652",
-  },
-  {
-    name: "Zainab Al-Farsi",
-    email: "zainab.farsi@inboxnow.com",
-    locations: ["Sharjah"],
-    subscription: "Golden",
-    registration: "Sep 28, 2024",
-    id: "1565651654",
-  },
-  {
-    name: "Michael Thompson",
-    email: "michael.t@fastmail.com",
-    locations: ["Ras Al Khaimah"],
-    subscription: "Golden",
-    registration: "Sep 28, 2024",
-    id: "1565651655",
-  },
-  {
-    name: "Omar Haddad",
-    email: "omar.haddad@quickmail.com",
-    locations: ["Fujairah", "Sharjah"],
-    subscription: "Golden",
-    registration: "Sep 28, 2024",
-    id: "1565651656",
-  },
-  {
-    name: "Sarah Ahmed",
-    email: "sarah.ahmed@outlookzone.com",
-    locations: ["Ajman"],
-    subscription: "Golden",
-    registration: "Sep 28, 2024",
-    id: "1565651657",
-  },
-  {
-    name: "Yusuf Ibrahim",
-    email: "yusuf.ibrahim@netmail.com",
-    locations: ["Ajman"],
-    subscription: "Golden",
-    registration: "Sep 28, 2024",
-    id: "1565651658",
-  },
-  {
-    name: "Yusuf Ibrahim",
-    email: "yusuf.ibrahim@netmail.com",
-    locations: ["Ajman"],
-    subscription: "Golden",
-    registration: "Sep 28, 2024",
-    id: "1565651659",
-  },
-  {
-    name: "Emily Scott",
-    email: "emily.scott@epost.com",
-    locations: ["Fujairah"],
-    subscription: "Golden",
-    registration: "Sep 28, 2024",
-    id: "1565651660",
-  },
-  {
-    name: "Hassan Mansour",
-    email: "hassan.mansour@sendit.com",
-    locations: ["Sharjah"],
-    subscription: "Golden",
-    registration: "Sep 28, 2024",
-    id: "1565651661",
-  },
-];
+type TProps = TUsersTableProps;
 
-export default function UsersTable({ className }: { className?: string }) {
+export default function UsersTable({ className, data }: TProps) {
   const navigate = useNavigate();
 
   const { userId } = useParams();
 
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const search = searchParams.get("search")?.toLowerCase();
+  const filterData = search
+    ? data.filter(
+        (el) =>
+          el.name.toLowerCase().includes(search) ||
+          el.email.toLowerCase().includes(search)
+      )
+    : data;
 
   function navigateToNewId(newId: string) {
     navigate({
@@ -154,7 +82,7 @@ export default function UsersTable({ className }: { className?: string }) {
         </Table.Header>
 
         <Table.Body
-          data={data}
+          data={filterData}
           render={(user) => {
             return (
               <tr
