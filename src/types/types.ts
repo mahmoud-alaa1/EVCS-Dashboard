@@ -14,6 +14,11 @@ export type ColrosMapTypes = {
   };
 };
 
+export interface Car {
+  make: string;
+  model: string;
+  color: string;
+}
 export interface User {
   id: string | number;
   name: string;
@@ -21,8 +26,10 @@ export interface User {
   locations: string[];
   subscription: string;
   registration: string;
-}
+  phone: string;
 
+  cars: Car[];
+}
 
 export interface TableTypes<T> {
   children?: React.ReactNode;
@@ -64,4 +71,7 @@ export type ButtonTypes = {
   type: "submit" | "reset" | "button" | undefined;
 } & ButtonHTMLAttributes<HTMLButtonElement>; //Include other button attributes;
 
-
+export type TUsersTableProps = {
+  className?: string;
+  data: User[];
+};
