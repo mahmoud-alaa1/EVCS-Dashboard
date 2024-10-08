@@ -23,7 +23,6 @@ export interface User {
   registration: string;
 }
 
-
 export interface TableTypes<T> {
   children?: React.ReactNode;
   data?: T[];
@@ -31,6 +30,14 @@ export interface TableTypes<T> {
   className?: string;
   id?: string;
 }
+
+export type dropdownMenuTypes = {
+  className?: string;
+  items?: string[];
+  render?: (option: string) => JSX.Element | null;
+  children: React.ReactNode;
+  arrow?: boolean;
+};
 
 export type InputTypes = {
   className?: string;
@@ -63,5 +70,3 @@ export type ButtonTypes = {
   className?: string;
   type: "submit" | "reset" | "button" | undefined;
 } & ButtonHTMLAttributes<HTMLButtonElement>; //Include other button attributes;
-
-

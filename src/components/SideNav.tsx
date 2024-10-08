@@ -1,5 +1,6 @@
-import RectangularStatistics from "../icons/Charts";
+import Charts from "../icons/Charts";
 import User from "../icons/User";
+import Van from "../icons/Van";
 import NavItemLink from "../ui/NavItemLink";
 export default function SideNav() {
   return (
@@ -7,7 +8,7 @@ export default function SideNav() {
       <ul className="flex flex-col justify-between gap-1">
         <li>
           <NavItemLink to={"overview"}>
-            <RectangularStatistics />
+            <Charts />
             Dashboard
           </NavItemLink>
         </li>
@@ -18,21 +19,9 @@ export default function SideNav() {
           </NavItemLink>
         </li>
         <li>
-          <NavItemLink to={"Option3"}>
-            <User />
-            Option 3
-          </NavItemLink>
-        </li>
-        <li>
-          <NavItemLink to={"Option4"}>
-            <User />
-            Option 4
-          </NavItemLink>
-        </li>
-        <li>
-          <NavItemLink to={"Option5"}>
-            <User />
-            Option 5
+          <NavItemLink to={"vans"}>
+            <Van />
+            Vans
           </NavItemLink>
         </li>
       </ul>

@@ -1,4 +1,3 @@
-import { FunctionComponent } from "react";
 import {
   XAxis,
   YAxis,
@@ -19,29 +18,9 @@ const data = [
   { name: "Jul", charge: 19 },
 ];
 
-interface CustomizedXProps {
-  x: number;
-  y: number;
-  payload: { value: string };
-}
-
-const CustomizedX: FunctionComponent<CustomizedXProps> = (
-  props: CustomizedXProps
-) => {
-  const { x, y, payload } = props;
-
-  return (
-    <g transform={`translate(${x},${y})`}>
-      <text dy={16} textAnchor="middle" fontFamily="Inter" fill="#9C907F">
-        {payload.value}
-      </text>
-    </g>
-  );
-};
-
 export default function ChargesChart() {
   return (
-    <ResponsiveContainer width="100%" height={400}>
+    <ResponsiveContainer width="100%" height={`90%`} >
       <AreaChart
         data={data}
         margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
