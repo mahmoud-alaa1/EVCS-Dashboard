@@ -5,7 +5,7 @@ import ChartContainer from "../ui/ChartContainer";
 
 export default function Middle() {
   return (
-    <div className="grid gap-9 2xl:grid-cols-[3fr_1fr] min-h-[30rem]">
+    <div className="grid gap-9 2xl:grid-cols-[3fr_1fr] min-h-[20rem]">
       <ChartContainer>
         <ChartContainer.Header>
           <ChartContainer.Title>Charges</ChartContainer.Title>
@@ -27,7 +27,7 @@ export default function Middle() {
               Van Capacity
             </ChartContainer.Title>
             <ChartContainer.Menu
-              className="text-dark"
+              className="text-dark bg-light-green-200 "
               items={["Dubai", "Abu Dhabi", "Sharjah"]}
             >
               Dubai
@@ -37,7 +37,7 @@ export default function Middle() {
           <CapacityChart />
         </ChartContainer>
 
-        <Card title="Waiting" value={122} unit="Clients" />
+        <Card className="bg-clients"  title="Waiting" value={122} unit="Clients" />
       </div>
     </div>
   );

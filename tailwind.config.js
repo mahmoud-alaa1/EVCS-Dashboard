@@ -6,17 +6,19 @@ export default {
       backgroundImage: {
         "login-hero": "url('/loginCover.jpeg') ",
 
+        clients:
+          "linear-gradient(90deg, rgba(202,236,172,1) 51%, rgba(246,255,239,1) 100%)",
         "button-gradient":
           "linear-gradient(90deg, #497C1D 0%, #66AD28 50%, #497C1D 100%)",
 
         "statistics-positive":
-          "linear-gradient(180deg, rgba(111,178,53,1) 50%, rgba(250,250,250,1) 100%, rgba(218,218,218,1) 100%)",
+          "linear-gradient(180deg, rgba(102,173,40,1) 11%, rgba(134,190,86,1) 59%, rgba(246,255,239,1) 99%)",
 
         "statistics-negative":
           "linear-gradient(180deg, rgba(20,20,20,1) 50%, rgba(250,250,250,1) 100%, rgba(218,218,218,1) 100%)",
 
         "login-gradient":
-          "linear-gradient(0deg, var(--Dark, #101010), var(--Dark, #101010)),radial-gradient(50% 50% at 50% 50%, rgba(102, 173, 40, 0.8) 0%, rgba(102, 173, 40, 0) 100%)",
+          "linear-gradient(63deg, rgba(102,173,40,1) 11%, rgba(0,0,0,1) 52%)",
       },
 
       gridTemplateColumns: {

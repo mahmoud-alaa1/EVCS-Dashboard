@@ -32,12 +32,12 @@ function Title({ children, className }: ChartProps) {
   );
 }
 
-function Menu({ children, items }: dropdownMenuTypes) {
+function Menu({ children, items,className="" }: dropdownMenuTypes) {
   return (
     <DropdownMenu
       items={items}
       arrow={true}
-      className="font-inter text-[#454545]"
+      className={`font-inter text-[#454545] ${className}`}
     >
       {children}
     </DropdownMenu>
