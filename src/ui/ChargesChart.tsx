@@ -62,7 +62,6 @@ export default function ChargesChart() {
         <Tooltip />
 
         <Area
-          animationDuration={500}
           type="bumpX"
           dataKey="charge"
           stroke="#76B93C" // Use the defined gradient for stroke

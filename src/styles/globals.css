@@ -1,7 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* WebKit-based browsers (Chrome, Safari) */
 
+
+::-webkit-scrollbar-track {
+  background-color: transparent; /* Background of the scrollbar track */
+  border-radius: 100px; /* Rounded corners of the scrollbar track */
+  margin: 8px; /* Add margin to create space around the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--green-400); /* Color of the scrollbar thumb */
+  border-radius: 100px; /* Rounded corners of the scrollbar thumb */
+  background-clip: content-box; /* Clip the background to the content box */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--green-700); 
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin; /* Make scrollbar thinner */
+  scrollbar-color: var(--green-400) transparent; /* Thumb and track color */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--green-400); /* Color of the scrollbar thumb */
+  border-radius: 100px; /* Rounded corners of the scrollbar thumb */
+  background-clip: content-box; /* Clip the background to the content box */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--green-700); 
+}
+
+/* Internet Explorer and Edge */
+body {
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* Auto-hide scrollbar */
+}
 
 
 :root {
