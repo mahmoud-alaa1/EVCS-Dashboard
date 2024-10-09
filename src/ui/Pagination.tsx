@@ -8,11 +8,12 @@ export default function Pagination({ length }: { length: number }) {
     { length: Math.ceil(length / 10) },
     (_, i) => i + 1
   );
+
   let page = Number(searchParams.get("page")) || 1;
-
+  page--;//Convert to 0-based index
   const handlePageChange = (change: number) => {
-
-    page = (page + change + LENGTH.length + 1) % (LENGTH.length + 1) || 1;
+    page = (page + change + LENGTH.length) % LENGTH.length;
+    page++; //Convert to 1-based index
     searchParams.set("page", page.toString());
     setSearchParams(searchParams);
   };
@@ -33,7 +34,7 @@ export default function Pagination({ length }: { length: number }) {
             key={i}
             onClick={() => handlePageChange(i + 1 - page)}
             className={`${
-              i + 1 == page ? "bg-green-50" : ""
+              i  == page ? "bg-green-50" : ""
             } rounded-[4px] text-base px-[10px] py-0.5 transition-all`}
           >
             {i + 1}

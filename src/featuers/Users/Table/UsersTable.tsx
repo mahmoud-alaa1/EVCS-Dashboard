@@ -65,7 +65,6 @@ export default function UsersTable({ className, data }: TProps) {
   //pagination
   const page = Number(searchParams.get("page")) || 1;
   copyData = copyData.slice((page - 1) * 10, page * 10);
-  console.log(copyData);
 
   return (
     <div className={className}>
