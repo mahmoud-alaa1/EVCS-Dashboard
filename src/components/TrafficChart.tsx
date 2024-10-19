@@ -1,12 +1,4 @@
-import {
-  LineChart,
-  Line,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+import { LineChart, Line, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
 // Generating 52 weeks of data for three cities
 const data = Array.from({ length: 5 }, (_, i) => ({
@@ -15,13 +7,13 @@ const data = Array.from({ length: 5 }, (_, i) => ({
   Sharjah: Math.floor(15 + Math.random() * 8), // Random traffic data between 12 and 20
   AbuDhabi: Math.floor(20 + Math.random() * 6), // Random traffic data between 10 and 16
 }));
-const CustomLegend = (props) => {
+
+const CustomLegend = () => {
   const legendItems = [
     { name: "Dubai", color: "url(#colorDubai)", solidColor: "#3D7DCA" }, // solid color used for legend circle
     { name: "Sharjah", color: "url(#colorSharjah)", solidColor: "#78B94C" },
     { name: "AbuDhabi", color: "url(#colorAbuDhabi)", solidColor: "#758C9E" },
   ];
-  const { payload } = props;
   return (
     <div style={{ display: "flex", justifyContent: "center", marginTop: 10 }}>
       {legendItems.map((entry, index) => (
@@ -60,11 +52,7 @@ export default function TrafficChart() {
           left: 0,
         }}
       >
-        <CartesianGrid
-          strokeLinecap="square"
-          color="##1D170F"
-          strokeWidth={0.4}
-        />
+        <CartesianGrid strokeLinecap="square" color="##1D170F" strokeWidth={0.4} />
         <defs>
           <linearGradient id="colorDubai" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#3D7DCA" />
@@ -92,14 +80,7 @@ export default function TrafficChart() {
         <Tooltip />
         <Legend content={<CustomLegend />} />
 
-        <Line
-          type="bumpX"
-          dataKey="Dubai"
-          stroke="url(#colorDubai)"
-          strokeWidth={7}
-          dot={false}
-          activeDot={{ r: 8 }}
-        />
+        <Line type="bumpX" dataKey="Dubai" stroke="url(#colorDubai)" strokeWidth={7} dot={false} activeDot={{ r: 8 }} />
         <Line
           type="monotone"
           dataKey="Sharjah"
