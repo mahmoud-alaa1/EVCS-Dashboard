@@ -28,15 +28,11 @@ export default function UserDetails({ className, data }: TProps) {
             ))}
           </div>
           <div className="mb-8">
-            <h2 className="text-light-green-800 font-bold text-2xl mb-4">
-              Information
-            </h2>
+            <h2 className="text-light-green-800 font-bold text-2xl mb-4">Information</h2>
             <UserInfo data={userData} />
           </div>
           <div>
-            <h2 className="text-light-green-800 font-bold text-2xl mb-4">
-              Charges Log
-            </h2>
+            <h2 className="text-light-green-800 font-bold text-2xl mb-4">Charges Log</h2>
             <ChargeLog />
           </div>
         </>

@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { useSearchParams } from "react-router-dom";
 import UnselectedSort from "./UnselectedSort";
 import Button from "./Button";
@@ -27,18 +27,12 @@ export default function SortButton({ children }: { children?: string }) {
   useEffect(() => {
     searchParams.set(`sort`, state);
     setSearchParams(searchParams);
-  }, [state,searchParams,setSearchParams,children]);
+  }, [state, searchParams, setSearchParams, children]);
 
   return (
-    <Button  type="button" className="gap-1" onClick={dispatch}>
+    <Button type="button" className="gap-1" onClick={dispatch}>
       {children}
-      {state === "default" ? (
-        <UnselectedSort />
-      ) : state === "high" ? (
-        <HightToLowSort />
-      ) : (
-        <LowToHightSort />
-      )}
+      {state === "default" ? <UnselectedSort /> : state === "high" ? <HightToLowSort /> : <LowToHightSort />}
     </Button>
   );
 }
