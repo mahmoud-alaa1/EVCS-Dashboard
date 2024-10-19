@@ -8,7 +8,7 @@ export default function AppLayout() {
       <Sidebar />
       {/* Ensure the white container scrolls inside its boundaries */}
       <div className="overflow-y-scroll  ">
-        <div className=" bg-[#FBFBFB] flex flex-col gap-[20px] flex-grow rounded-[30px]  pt-[20px] px-[20px] sm:px-[50px] pb-[61px]  relative">
+        <div className=" bg-[#FBFBFB] flex flex-col gap-[20px] min-h-screen flex-grow rounded-[30px]  pt-[20px] px-[20px] sm:px-[50px] pb-[61px]  relative">
           <Navbar />
           <main className="flex-grow flex flex-col over ">
             <Outlet />
