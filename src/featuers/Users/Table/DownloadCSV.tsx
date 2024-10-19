@@ -1,8 +1,8 @@
 import { downloadCSV } from "../../../lib/utils/helpers";
-import { TUsersTableProps } from "../../../types/types";
+import { User } from "../../../types/types";
 import Button from "../../../ui/Button";
 
-export default function DownloadCSV({ data }: { data: TUsersTableProps }) {
+export default function DownloadCSV({ data }: { data: User[] }) {
   return (
     <Button
       type="button"
