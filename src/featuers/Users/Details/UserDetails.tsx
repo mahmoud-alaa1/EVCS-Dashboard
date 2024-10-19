@@ -8,13 +8,18 @@ type TProps = TUsersTableProps;
 export default function UserDetails({ className, data }: TProps) {
   const { userId } = useParams();
 
-  const userData = data.find((user) => user.id === userId);
+  const userData = data.find((user) => user.id === userId) ?? {
+    id: '',
+    name: '',
+    email: '',
+    locations: [],
+    cars: [],
+    subscription: '',
+    registration: '',
+    phone: '',
+  };
 
-  if (!userData) {
-    return <p>User not found</p>;
-  }
-
-  const { cars = [] } = userData;
+  const { cars } = userData;
   return (
     <div className={` bg-light-green-300 ${className}`}>
       {!userId ? (
